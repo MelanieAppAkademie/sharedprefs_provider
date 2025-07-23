@@ -12,16 +12,16 @@ class CounterRepository with ChangeNotifier {
 
   int get counter => _counter;
 
+  Future<void> _loadCounter() async {
+    final _prefs = await SharedPreferences.getInstance();
+    _counter = _prefs.getInt(_counterKey) ?? 0;
+    notifyListeners();
+  }
+
   Future<void> setCurrentCounter(int counter) async {
     final _prefs = await SharedPreferences.getInstance();
     await _prefs.setInt(_counterKey, counter);
     _counter = counter;
-    notifyListeners();
-  }
-
-  Future<void> _loadCounter() async {
-    final _prefs = await SharedPreferences.getInstance();
-    _counter = _prefs.getInt(_counterKey) ?? 0;
     notifyListeners();
   }
 
