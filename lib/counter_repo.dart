@@ -2,31 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CounterRepository with ChangeNotifier {
+  static const String _counterKey = "current_counter";
+
+  int _counter = 0;
+
+  CounterRepository() {
+    _loadCounter();
+  }
+
+  int get counter => _counter;
+
   Future<void> setCurrentCounter(int counter) async {
     final _prefs = await SharedPreferences.getInstance();
-    await _prefs.setInt("current_counter", counter);
+    await _prefs.setInt(_counterKey, counter);
+    _counter = counter;
     notifyListeners();
   }
 
-  Future<void> setCurrentThemeMode(bool themeMode) async {
+  Future<void> _loadCounter() async {
     final _prefs = await SharedPreferences.getInstance();
-    await _prefs.setBool('isDarkMode', themeMode);
+    _counter = _prefs.getInt(_counterKey) ?? 0;
     notifyListeners();
-  }
-
-  Future<int>? getCurrentCounter() async {
-    final _prefs = await SharedPreferences.getInstance();
-    return _prefs.getInt("current_counter") ?? 0;
-  }
-
-  Future<bool>? getCurrentThemeMode() async {
-    final _prefs = await SharedPreferences.getInstance();
-    return _prefs.getBool("isDarkMode") ?? false;
   }
 
   void deleteCounter() async {
     final _prefs = await SharedPreferences.getInstance();
-    _prefs.remove('current_counter');
+    await _prefs.remove(_counterKey);
+    _counter = 0;
     notifyListeners();
   }
 }
