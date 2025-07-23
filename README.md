@@ -125,6 +125,8 @@ void deleteCounter() async {
 }
 ```
 
+---
+
 ### 4. ChangeNotifier in Service-Klasse hinzufügen
 
 Damit eure Service-Klasse (z.B. CounterRepository, ThemeProvider) Änderungen an die UI weitergeben kann, erweitert sie `ChangeNotifier` und ruft nach Änderungen `notifyListeners()` auf.
@@ -146,6 +148,8 @@ class CounterRepository with ChangeNotifier { // hier ist die Änderung zu Chang
   }
 }
 ```
+
+---
 
 ### 5. Multiprovider in main.dart
 
