@@ -1,16 +1,16 @@
-# sharedprefs_provider
+# SharedPrefs
 
-A new Flutter project.
+In diesem Projekt wird demonstriert, wie man SharedPreferences (oder auch viele andere Datenbanken) und Provider zusammen nutzen kann.
 
-## Getting Started
+## Quellen
 
-This project is a starting point for a Flutter application.
+[Shared Preferences-Package](https://pub.dev/packages/shared_preferences)
+[Provider](https://pub.dev/packages/provider)
+[Vorlesung Shared Prefs](https://docs.google.com/presentation/d/1eM7_HxhhcV4Tz_G0ywbGXBqy3Spnyd-IC17IMMld_1c/edit?usp=sharing)
+[Vorlesung Provider](https://docs.google.com/presentation/d/1hjn2wam0CanvSy2QpbIiwFLuEUXxOS5WAEsKSEelsKA/edit?slide=id.g36327d5c0f3_0_1#slide=id.g36327d5c0f3_0_1)
 
-A few resources to get you started if this is your first Flutter project:
+### 1. Step: Packages hinzufügen
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Im Terminal
+`flutter pub get shared_preferences`
+`flutter pub get provider`
