@@ -12,5 +12,5 @@ In diesem Projekt wird demonstriert, wie man SharedPreferences (oder auch viele 
 ### 1. Step: Packages hinzufügen
 
 Im Terminal
-`flutter pub get shared_preferences`
+`flutter pub get shared_preferences`\
 `flutter pub get provider`
